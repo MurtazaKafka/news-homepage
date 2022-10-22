@@ -206,6 +206,7 @@ footer {
     .web-3 {
         grid-area: web;
         display: grid;
+        margin-right: 1.5rem;
         grid-template-areas: 
         "pic pic"
         "art det"
@@ -222,9 +223,12 @@ footer {
 
     .web-3-bright-future {
         grid-area: art;
+        padding: .5em;
+        line-height: 3.5rem;
     }
 
     .web-3-details {
+        font-size: larger;
         grid-area: det;
         align-self: flex-start;
         padding-bottom: 0;
