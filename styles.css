@@ -280,6 +280,10 @@ footer {
 }
 
 @media (min-width: 900px) {
+    
+    body {
+        padding: 4rem 1.5rem;
+    }
     .new {
         font-size: 1.4rem;
     }
