@@ -1,0 +1,290 @@
+/* Typography */
+
+@font-face {
+    font-family: Inter;
+    src: url(assets/fonts/Inter-VariableFont_slnt,wght.ttf);
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(/assets/fonts/static/Inter-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(/assets/fonts/static/Inter-Regular.ttf);
+    font-weight: normal;
+}
+
+body {
+    padding: 1rem;
+    font-family: 'Inter', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+h1{
+    font-family: 'Inter', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom:1em;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+/* Layout */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 1.5em 0; */
+    position: fixed;
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: auto;
+    top: 0;
+    background-color: white;
+    padding: 2rem 2px .8rem 2px;
+}
+
+@media(max-width: 45rem) {
+    .navigation {
+        position: fixed;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(3rem);
+        right: 0;
+        top: 0;
+        bottom: -200%;
+        margin-top: 0;
+        left: 35%;
+        font-size: 1.4rem;
+        display: none;
+        flex-direction: column;
+        padding-top: 6em;
+        gap: 1.7em;
+        padding-left: 1em;
+        font-weight: bold;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .showContent {
+        display: flex;
+    }
+}
+
+main {
+    margin-top: 4rem;
+}
+
+.close-menu {
+    position: absolute;
+    left: 70%;
+    top: 3rem;
+    bottom: 0;
+    right: 0;
+}
+
+.navigation > li {
+    list-style: none;
+}
+
+li > a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+img {
+    width: 100%;
+}
+
+.web-3-img {
+    padding-top: 1.4rem;
+}
+
+.web-3 > a {
+    text-decoration: none;
+    background-color: hsl(5, 85%, 63%);
+    padding: 1em 3em;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    margin: 1em 0;
+}
+
+.new {
+    background-color: hsl(240, 100%, 5%);
+    padding: 1.4rem;
+    margin: 2em 0;
+}
+
+.new > h3 {
+    color: rgba(245, 245, 245, 0.95);
+    
+}
+
+.new > p {
+    border-bottom: solid .1px rgba(245, 245, 245, 0.6);
+    padding-bottom: 1.5em;
+    color: rgba(245, 245, 245, 0.6);
+}
+
+.new > p:last-child {
+    border-bottom: none;
+}
+
+.headline-recent {
+    color: hsl(35, 77%, 62%);
+    font-weight: bold;
+}
+
+.retro > article {
+    display: flex;
+    margin-bottom: .8em;
+    gap: 1.5em;
+}
+
+.retro > article > img {
+    width: 30%;
+    object-fit: contain;
+}
+
+.retro > article > .retro-details {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.retro-headline {
+    font-size: 2rem;
+    color: hsl(233, 8%, 79%);
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+footer {
+    margin-top: 4rem;
+}
+
+
+@media(min-width: 45rem) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    }
+
+    header {
+        position: inherit;
+        grid-area: header;
+    }
+
+    main {
+        margin-top: 0;
+        grid-area: main;
+        display: grid;
+        gap: 1rem;
+        grid-template-areas: 
+        "web web new"
+        "web web new"
+        "retro retro retro";
+    }
+
+    .web-3 {
+        grid-area: web;
+        display: grid;
+        grid-template-areas: 
+        "pic pic"
+        "art det"
+        "art read";
+    }
+
+    .web-3-img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        grid-area: pic;
+        align-self: center;
+    }
+
+    .web-3-bright-future {
+        grid-area: art;
+    }
+
+    .web-3-details {
+        grid-area: det;
+        align-self: flex-start;
+        padding-bottom: 0;
+    }
+
+    .web-3 > a {
+        grid-area: read;
+        display: inline-block;
+        max-width: 8rem;
+        height: min-content;
+    }
+
+    .new {
+        font-size: 1rem;
+        grid-area: new;
+    }
+    
+    .retro {
+        grid-area: retro;
+        display: flex;
+    }
+
+    .retro > article > img {
+        min-width: 7rem;
+        min-height: 4rem;
+        object-fit: contain;
+        align-self: center;
+    }
+
+    .retro > h3, .retro > h4, .retro p {
+        margin: 5px 5px 5px 0;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .close-menu {
+        display: none;
+    }
+
+    .navigation {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        font-size: 1.2rem;
+        padding-right: 1.5em;
+    }
+    footer {
+        grid-area: footer;
+    }
+
+}
+
+@media (min-width: 900px) {
+    .new {
+        font-size: 1.4rem;
+    }
+
+    .retro > article {
+        margin: 0 2em;
+    }
+}
